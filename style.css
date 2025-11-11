@@ -3,6 +3,7 @@ body {
     text-align: center;
     background-color: #f4f4f4;
     padding-top: 50px;
+    padding-bottom: 50px; /* 下部にも余白を追加 */
 }
 
 h1 {
@@ -31,17 +32,15 @@ h1 {
 
 #result-container {
     margin-top: 20px;
-    height: 60px; /* 役名表示エリアの高さを確保 */
+    height: 60px; 
 }
 
 #hand-name {
     font-size: 1.8em;
     font-weight: bold;
-    color: #d9534f; /* 目立つ色 */
+    color: #d9534f;
     margin: 5px 0;
 }
-
-/* #message と .hidden のスタイルを削除 */
 
 button {
     font-size: 1.2em;
@@ -55,8 +54,65 @@ button {
     transition: background-color 0.2s;
 }
 
-/* button:disabled のスタイルを削除（常に押せるため） */
+button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
 
-button:hover {
+button:not(:disabled):hover {
     background-color: #025aa5;
+}
+
+/* --- 履歴エリアのスタイルを追記 --- */
+#log-container {
+    margin-top: 40px;
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: left;
+}
+
+#log-container h2 {
+    text-align: center;
+    margin-top: 5px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+#log-list {
+    list-style: none; /* ・を消す */
+    padding: 0;
+    margin: 0;
+    max-height: 200px; /* 高くなりすぎたらスクロール */
+    overflow-y: auto;
+}
+
+#log-list li {
+    font-size: 1.1em;
+    padding: 8px 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+/* 古い履歴を少し薄くする */
+#log-list li:nth-child(n+6) { 
+    color: #888;
+}
+
+/* サイコロの目をインライン表示 */
+#log-list .log-dice {
+    font-size: 0.9em;
+    margin-right: 10px;
+    color: #555;
+    display: inline-block;
+    width: 60px; /* 幅を固定 */
+}
+
+/* 役名を強調 */
+#log-list .log-hand {
+    font-weight: bold;
+    color: #d9534f;
 }
