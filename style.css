@@ -1,0 +1,62 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding-top: 50px;
+}
+
+h1 {
+    color: #333;
+}
+
+#dice-container {
+    font-size: 4em;
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.die {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border: 3px solid #555;
+    border-radius: 10px;
+    background-color: #fff;
+    font-weight: bold;
+    color: #333;
+    display: inline-block;
+}
+
+#result-container {
+    margin-top: 20px;
+    height: 60px; /* 役名表示エリアの高さを確保 */
+}
+
+#hand-name {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #d9534f; /* 目立つ色 */
+    margin: 5px 0;
+}
+
+/* #message と .hidden のスタイルを削除 */
+
+button {
+    font-size: 1.2em;
+    padding: 12px 25px;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #0275d8;
+    transition: background-color 0.2s;
+}
+
+/* button:disabled のスタイルを削除（常に押せるため） */
+
+button:hover {
+    background-color: #025aa5;
+}
